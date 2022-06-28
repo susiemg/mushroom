@@ -28,8 +28,8 @@ To see the original data, please visit this [Kaggle link](https://www.kaggle.com
 st.sidebar.header("User Input Features")
 
 def user_input_features():
-  cap_shape=st.sidebar.selectbox("Cap Shape",("Bell","Conical","Convex","Flat","Knobbed","Sunken"),key="1")
-  cap_surface=st.sidebar.selectbox("Cap Surface",("Fibrous","Grooves","Scaly","Smooth"),key="2")
+  cap_shape=st.sidebar.selectbox("Cap Shape",("Bell","Conical","Convex","Flat","Knobbed","Sunken"))
+  cap_surface=st.sidebar.selectbox("Cap Surface",("Fibrous","Grooves","Scaly","Smooth"))
   cap_color=st.sidebar.selectbox("Cap Colour",("Brown","Buff","Cinnamon","Gray","Green","Pink","Purple","Red","White","Yellow"))
   bruises=st.sidebar.selectbox("Are bruises present?",("Yes","No"))
   odor=st.sidebar.selectbox("Odor",("Almond","Anise","Creosote","Fishy","Foul","Musty","Pungent","Spicy","None")) 
