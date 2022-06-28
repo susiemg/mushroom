@@ -25,7 +25,7 @@ To see the original data, please visit this [Kaggle link](https://www.kaggle.com
 
 ''')
 
-st.sidebar.header("User Input Feautures")
+st.sidebar.header("User Input Features")
 
 def user_input_features():
   cap_shape=st.sidebar.selectbox("Cap Shape",("Bell","Conical","Convex","Flat","Knobbed","Sunken"),key="1")
