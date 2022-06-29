@@ -6,16 +6,6 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 
 
-
-#import os
-#os.getcwd()
-#os.chdir("/Users/susanamaganga/Desktop/mushrooms")
-
-#mushrooms=pd.read_csv('mushrooms.csv')
-#list(mushrooms.loc[:,mushrooms.columns!="class"].columns)
-
-#mushrooms.iloc[:,2].value_counts()
-
 st.write('''
 # To Eat Or Not To Eat?
 
