@@ -4,7 +4,10 @@ import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
 import pickle
+from PIL import Image
 
+img = Image.open('mshparts.jpeg')
+st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/")
 
 st.write('''
 # :mushroom: To Eat Or Not To Eat? :mushroom:
