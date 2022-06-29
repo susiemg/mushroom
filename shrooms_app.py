@@ -43,7 +43,7 @@ def user_input_features():
   stalk_surface_below_ring=st.sidebar.selectbox("Stalk Surface Below Ring",("Fibrous","Scaly","Silky","Smooth"))
   stalk_color_above_ring=st.sidebar.selectbox("Stalk Colour Above Ring",("Brown","Buff","Cinnamon","Gray","Orange","Pink","Red","White","Yellow"))
   stalk_color_below_ring=st.sidebar.selectbox("Stalk Colour Below Ring",("Brown","Buff","Cinnamon","Gray","Orange","Pink","Red","White","Yellow"))
-  veil_type=st.sidebar.selectbox("Veil Type",("Partial"))
+  #veil_type=st.sidebar.selectbox("Veil Type",("Partial"))
   veil_color=st.sidebar.selectbox("Veil Colour",("Brown","Orange","White","Yellow"))
   ring_number=st.sidebar.selectbox("Ring Number",("None","One","Two"))
   ring_type=st.sidebar.selectbox("Ring Type",("Evanescent","Flaring","Large","Pendant","None"))
@@ -66,7 +66,7 @@ def user_input_features():
         'stalk_surface_below_ring':stalk_surface_below_ring,
         'stalk_color_above_ring':stalk_color_above_ring,
         'stalk_color_below_ring':stalk_color_below_ring,
-        'veil_type':veil_type,
+        'veil_type':"Partial",
         'veil_color':veil_color,
         'ring_number':ring_number,
         'ring_type':ring_type,
