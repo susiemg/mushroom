@@ -7,7 +7,7 @@ import pickle
 
 
 st.write('''
-# To Eat Or Not To Eat? :mushroom:
+# :mushroom: To Eat Or Not To Eat? :mushroom:
 
 This app predicts whether a mushroom is edible or poisonous.
 
