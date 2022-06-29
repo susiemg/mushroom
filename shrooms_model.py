@@ -5,15 +5,10 @@ from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
 
 
-#some basic work
 mushrooms=pd.read_csv('mushrooms_clean.csv')
-mushrooms.info()
-mushrooms.isnull().sum()
-mushrooms.nunique()
 
-#mushrooms.loc[:,mushrooms.columns!="class"].columns()
 
-#let's get down to business and feature encode
+#feature encoding
 df=mushrooms.copy()
 target="class"
 encode=list(mushrooms.loc[:,mushrooms.columns!="class"].columns)
