@@ -94,7 +94,7 @@ prediction_proba=load_clf.predict_proba(df)
 st.subheader("Prediction Result")
 mushrooms_class=np.array(["Edible","Poisonous"])
 st.write(mushrooms_class[prediction])
-st.write("Your mushroom is", prediction)
+st.write("Your mushroom is", mushrooms_class[prediction])
 
 st.subheader("Prediction Probability")
 st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
