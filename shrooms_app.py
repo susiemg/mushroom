@@ -98,7 +98,11 @@ else:
 
 st.subheader("Prediction Result")
 mushrooms_class=np.array(["Edible","Poisonous"])
-st.write("Your mushroom is", answer)
+#st.write("Your mushroom is", answer)
+if prediction==0:
+  st.write("Yay! Your mushroom is edible")
+else:
+  st.write("Oh no. Your mushroom is poisonous")
 
 st.subheader("Prediction Probability")
 st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
