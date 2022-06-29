@@ -15,7 +15,7 @@ To see the original data, please visit this [Kaggle link](https://www.kaggle.com
 
 ''')
 
-st.sidebar.header("User Input Features")
+st.sidebar.header("Please input the features here:")
 
 def user_input_features():
   cap_shape=st.sidebar.selectbox("Cap Shape",("Bell","Conical","Convex","Flat","Knobbed","Sunken"))
@@ -90,11 +90,15 @@ load_clf=pickle.load(open("mushrooms_clf.pkl","rb")) #reads saved classification
 #apply model to predict
 prediction=load_clf.predict(df)
 prediction_proba=load_clf.predict_proba(df)
+if prediction==0:
+  answer="Edible"
+else:
+  answer="Poisonous"
+ 
 
 st.subheader("Prediction Result")
 mushrooms_class=np.array(["Edible","Poisonous"])
-st.write(mushrooms_class[prediction])
-st.write("Your mushroom is", mushrooms_class[prediction])
+st.write("Your mushroom is", answer)
 
 st.subheader("Prediction Probability")
 st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
