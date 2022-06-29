@@ -90,11 +90,13 @@ load_clf=pickle.load(open("mushrooms_clf.pkl","rb")) #reads saved classification
 #apply model to predict
 prediction=load_clf.predict(df)
 prediction_proba=load_clf.predict_proba(df)
+
+######for simpler execution######
 if prediction==0:
   answer="Edible"
 else:
   answer="Poisonous"
- 
+################################# 
 
 st.subheader("Prediction Result")
 mushrooms_class=np.array(["Edible","Poisonous"])
