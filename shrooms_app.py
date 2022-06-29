@@ -91,10 +91,12 @@ load_clf=pickle.load(open("mushrooms_clf.pkl","rb")) #reads saved classification
 prediction=load_clf.predict(df)
 prediction_proba=load_clf.predict_proba(df)
 
-st.subheader("Prediction")
+st.subheader("Prediction Result")
 mushrooms_class=np.array(["Edible","Poisonous"])
 st.write(mushrooms_class[prediction])
+st.write("Your mushroom is", prediction)
 
 st.subheader("Prediction Probability")
+st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
 st.write(prediction_proba)
 
