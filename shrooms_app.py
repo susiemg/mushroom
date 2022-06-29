@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 from PIL import Image
 
-img = Image.open('mshparts.jpeg')
+img = Image.open('mshrmparts.jpeg')
 st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/")
 
 st.write('''
