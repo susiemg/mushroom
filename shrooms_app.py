@@ -13,7 +13,7 @@ st.write('''
 
 This app predicts whether a mushroom is edible or poisonous.
 
-To see the original data, please visit this [Kaggle link](https://www.kaggle.com/datasets/uciml/mushroom-classification)
+To see the original data, please visit this [link](https://www.kaggle.com/datasets/uciml/mushroom-classification)
 
 ''')
 
