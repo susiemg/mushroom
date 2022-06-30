@@ -115,6 +115,6 @@ with col1:
   st.write(prediction_proba)
   
 with col2:
-  st.image(img, caption=[Source](https://grocycle.com/parts-of-a-mushroom/),width=350)
+  st.image(img, caption="Source:(https://grocycle.com/parts-of-a-mushroom/",width=350)
 
 
