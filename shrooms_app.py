@@ -7,7 +7,6 @@ import pickle
 from PIL import Image
 
 img = Image.open('mshrmparts.jpeg')
-st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/")
 
 st.write('''
 # :mushroom: To Eat Or Not To Eat? :mushroom:
@@ -17,6 +16,8 @@ This app predicts whether a mushroom is edible or poisonous.
 To see the original data, please visit this [Kaggle link](https://www.kaggle.com/datasets/uciml/mushroom-classification)
 
 ''')
+
+st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=400)
 
 st.sidebar.header("Please input the features here:")
 
