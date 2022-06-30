@@ -106,7 +106,7 @@ with col1:
   mushrooms_class=np.array(["Edible","Poisonous"])
   #st.write("Your mushroom is", answer)
   if prediction==0:
-    st.write("Yay! Your mushroom is edible",:sparkles:)
+    st.write("Yay! Your mushroom is edible",''':sparkles:''')
   else:
     st.write("Oh no. Your mushroom is poisonous")
 
