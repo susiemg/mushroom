@@ -17,8 +17,6 @@ To see the original data, please visit this [Kaggle link](https://www.kaggle.com
 
 ''')
 
-st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=350)
-
 st.sidebar.header("Please input the features here:")
 
 def user_input_features():
@@ -101,16 +99,22 @@ if prediction==0:
 else:
   answer="Poisonous"
 ################################# 
+col1, col2 = st.columns(2)
 
-st.subheader("Prediction Result")
-mushrooms_class=np.array(["Edible","Poisonous"])
-#st.write("Your mushroom is", answer)
-if prediction==0:
-  st.write("Yay! Your mushroom is edible")
-else:
-  st.write("Oh no. Your mushroom is poisonous")
+with col1:
+  st.subheader("Prediction Result")
+  mushrooms_class=np.array(["Edible","Poisonous"])
+  #st.write("Your mushroom is", answer)
+  if prediction==0:
+    st.write("Yay! Your mushroom is edible")
+  else:
+    st.write("Oh no. Your mushroom is poisonous")
 
-st.subheader("Prediction Probability")
-st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
-st.write(prediction_proba)
+  st.subheader("Prediction Probability")
+  st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
+  st.write(prediction_proba)
+  
+with col2:
+  st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=350)
+
 
