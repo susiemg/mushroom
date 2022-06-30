@@ -104,9 +104,9 @@ col1, col2 = st.columns(2)
 with col1:
   st.subheader("Prediction Result")
   mushrooms_class=np.array(["Edible","Poisonous"])
-  #st.write("Your mushroom is", answer,:sparkles:)
+  #st.write("Your mushroom is", answer)
   if prediction==0:
-    st.write("Yay! Your mushroom is edible")
+    st.write("Yay! Your mushroom is edible",:sparkles:)
   else:
     st.write("Oh no. Your mushroom is poisonous")
 
