@@ -17,7 +17,7 @@ To see the original data, please visit this [Kaggle link](https://www.kaggle.com
 
 ''')
 
-st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=400)
+st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=300)
 
 st.sidebar.header("Please input the features here:")
 
