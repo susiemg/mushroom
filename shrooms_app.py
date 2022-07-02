@@ -107,6 +107,7 @@ with col1:
   #st.write("Your mushroom is", answer)
   if prediction==0:
     st.write("Yay! Your mushroom is edible",''':relaxed:''')
+    st.balloons()
   else:
     st.write("Oh no. Your mushroom is poisonous",''':cry:''')
 
