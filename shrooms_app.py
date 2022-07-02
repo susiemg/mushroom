@@ -106,10 +106,10 @@ with col1:
   mushrooms_class=np.array(["Edible","Poisonous"])
   #st.write("Your mushroom is", answer)
   if prediction==0:
-    st.success("Yay! Your mushroom is edible ''':relaxed:''' ")
+    st.success("Yay! Your mushroom is edible :relaxed:")
     st.balloons()
   else:
-    st.error("Oh no. Your mushroom is poisonous ''':cry:''' ")
+    st.error("Oh no. Your mushroom is poisonous :cry:")
 
   st.subheader("Prediction Probability")
   st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
