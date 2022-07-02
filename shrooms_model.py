@@ -11,7 +11,7 @@ mushrooms=pd.read_csv('mushrooms_clean.csv')
 #feature encoding
 df=mushrooms.copy()
 target="class"
-encode=list(mushrooms.loc[:,mushrooms.columns!="class"].columns)
+encode=list(df.loc[:,df.columns!="class"].columns)
 
 for col in encode:
   dummy=pd.get_dummies(df[col],prefix=col)
