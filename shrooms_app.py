@@ -126,7 +126,8 @@ with col1:
 
   st.subheader("Prediction Probability")
   st.write("Note: Probability indicates the likelihood of mushroom being edible")
-  st.write(np.round(prediction,3))
+  round_pred = np.round(prediction,3)
+  st.write(round_pred)
   
 with col2:
   st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=350)
