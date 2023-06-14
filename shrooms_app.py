@@ -72,6 +72,10 @@ def user_input_features():
 
 input_df= user_input_features()
 
+mushrooms_raw = pd.read_csv('mushrooms_clean.csv')
+mushrooms = mushrooms_raw.drop(columns=["class"]) #drop bc we're going to predict this
+df = pd.concat([input_df,mushrooms],axis=0) #combine input features to dataset
+
 # encoding categorical features in input_df
 encode_cols = list(input_df.columns)
 for col in encode_cols:
@@ -80,7 +84,7 @@ for col in encode_cols:
     del input_df[col]
 
 # make sure input_df contains all encoded columns
-for col in input_df.columns:
+for col in df.columns:
     if col not in input_df.columns:
         input_df[col] = 0
 
