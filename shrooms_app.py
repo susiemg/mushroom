@@ -72,33 +72,42 @@ def user_input_features():
 
 input_df= user_input_features()
 
-mushrooms_raw=pd.read_csv('mushrooms_clean.csv')
-mushrooms=mushrooms_raw.drop(columns=["class"]) #drop bc we're going to predict this
-df=pd.concat([input_df,mushrooms],axis=0) #combine input features to dataset
+# encoding categorical features in input_df
+encode_cols = list(input_df.columns)
+for col in encode_cols:
+    dummy = pd.get_dummies(input_df[col], prefix=col)
+    input_df = pd.concat([input_df, dummy], axis=1)
+    del input_df[col]
 
-#encoding categorical feautures
-encode=list(df.columns)
-for col in encode:
-  dummy=pd.get_dummies(df[col],prefix=col)
-  df=pd.concat([df,dummy],axis=1)
-  del df[col]
-  
-df=df[:1] #selects only the first row
+# make sure input_df contains all encoded columns
+for col in df.columns:
+    if col not in input_df.columns:
+        input_df[col] = 0
 
-# Convert DataFrame to DMatrix
-dmatrix = xgb.DMatrix(df)
+# select only the first row (user input)
+input_df = input_df.iloc[:1]
 
-#st.subheader("User Input Features")
-#st.write(df)
+# Ensure the columns of input_df match the feature_names used in the XGBoost model
+input_df = input_df.reindex(columns=model.feature_names, fill_value=0)
 
-load_clf=pickle.load(open("mushrooms_clf.pkl","rb")) #reads saved classification model
+# Convert input_df to DMatrix format
+dmatrix = xgb.DMatrix(input_df)
 
-#apply model to predict
-prediction=load_clf.predict(dmatrix)
-prediction_proba=load_clf.predict_proba(dmatrix)
+# Load the saved classification model
+load_clf = pickle.load(open("mushrooms_clf.pkl", "rb"))
+
+# Predict the label for the user input
+prediction = model.predict(dmatrix)
+
+# Apply the model to predict
+prediction = load_clf.predict(dmatrix)
+prediction_proba = load_clf.predict_proba(dmatrix)
+
+# Convert the predicted probability to a binary label
+predicted_label = 1 if prediction >= 0.5 else 0
 
 ######for simpler execution######
-if prediction==0:
+if predicted_label==0:
   answer="Edible"
 else:
   answer="Poisonous"
