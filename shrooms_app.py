@@ -118,7 +118,7 @@ with col1:
   st.subheader("Prediction Result")
   mushrooms_class=np.array(["Edible","Poisonous"])
   #st.write("Your mushroom is", answer)
-  if prediction==0:
+  if predicted_label == 1:
     st.success("Yay! Your mushroom is edible :relaxed:")
     st.balloons()
   else:
