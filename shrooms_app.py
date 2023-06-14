@@ -125,7 +125,7 @@ with col1:
     st.error("Oh no. Your mushroom is poisonous :cry:")
 
   st.subheader("Prediction Probability")
-  st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
+  st.write("Note: Probability indicates the likelihood of mushroom being edible")
   st.write(prediction)
   
 with col2:
