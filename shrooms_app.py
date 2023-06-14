@@ -80,7 +80,7 @@ for col in encode_cols:
     del input_df[col]
 
 # make sure input_df contains all encoded columns
-for col in df.columns:
+for col in input_df.columns:
     if col not in input_df.columns:
         input_df[col] = 0
 
