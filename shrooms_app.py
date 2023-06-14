@@ -20,6 +20,9 @@ To see the original data, please visit this [link](https://www.kaggle.com/datase
 
 st.sidebar.header("Please input the features here:")
 
+# Load the saved classification model
+load_clf = pickle.load(open("mushrooms_clf.pkl", "rb"))
+
 def user_input_features():
   cap_shape=st.sidebar.selectbox("Cap Shape",("Bell","Conical","Convex","Flat","Knobbed","Sunken"))
   cap_surface=st.sidebar.selectbox("Cap Surface",("Fibrous","Grooves","Scaly","Smooth"))
@@ -92,16 +95,10 @@ for col in df.columns:
 input_df = input_df.iloc[:1]
 
 # Ensure the columns of input_df match the feature_names used in the XGBoost model
-input_df = input_df.reindex(columns=model.feature_names, fill_value=0)
+input_df = input_df.reindex(columns = load_clf.feature_names, fill_value=0)
 
 # Convert input_df to DMatrix format
 dmatrix = xgb.DMatrix(input_df)
-
-# Load the saved classification model
-load_clf = pickle.load(open("mushrooms_clf.pkl", "rb"))
-
-# Predict the label for the user input
-prediction = model.predict(dmatrix)
 
 # Apply the model to predict
 prediction = load_clf.predict(dmatrix)
