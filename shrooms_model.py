@@ -1,6 +1,3 @@
-#import os
-#os.chdir("/Users/susanamaganga/Downloads")
-
 import numpy as np
 import streamlit as st
 import pandas as pd
@@ -16,7 +13,7 @@ data = pd.read_csv('mushrooms_clean.csv')
 data_encoded = pd.get_dummies(data)
 
 # Separate predictor variables (X) and response variable (y)
-X = data_encoded.drop('class_Edible', axis=1)
+X = data_encoded.drop(['class_Edible','class_Poisonous'], axis=1)
 y = data_encoded['class_Edible']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -38,10 +35,6 @@ y_pred = model.predict(dtest)
 
 # Convert the predicted probabilities to binary labels
 y_pred_binary = [1 if p >= 0.5 else 0 for p in y_pred]
-
-# Calculate the accuracy
-accuracy = accuracy_score(y_test, y_pred_binary)
-#print('Accuracy:', accuracy)
 
 #saving the model
 import pickle
