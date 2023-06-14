@@ -102,7 +102,6 @@ dmatrix = xgb.DMatrix(input_df)
 
 # Apply the model to predict
 prediction = load_clf.predict(dmatrix)
-prediction_proba = load_clf.predict_proba(dmatrix)
 
 # Convert the predicted probability to a binary label
 predicted_label = 1 if prediction >= 0.5 else 0
@@ -127,7 +126,7 @@ with col1:
 
   st.subheader("Prediction Probability")
   st.write("Note: 0 indicates the probability of being edible, 1 represents the probability of being poisonous")
-  st.write(prediction_proba)
+  st.write(prediction)
   
 with col2:
   st.image(img, caption="Source:https://grocycle.com/parts-of-a-mushroom/",width=350)
