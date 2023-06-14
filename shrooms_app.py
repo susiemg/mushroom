@@ -125,7 +125,7 @@ with col1:
     st.error("Oh no. Your mushroom is poisonous :cry:")
 
   st.subheader("Prediction Probability")
-  st.write("Note: Probability indicates the likelihood of mushroom being edible")
+  st.write("Note: Probability indicates the likelihood of mushroom being edible. Some features have a more significant effect on this than others")
   round_pred = np.round(prediction,3)
   st.write(round_pred)
   
