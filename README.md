@@ -1,3 +1,3 @@
 # Mushroom
-An app that predicts mushroom edibility using the Random Forests algorithm.
+An app that predicts mushroom edibility using the XGBoost algorithm.
 
