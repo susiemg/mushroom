@@ -5,6 +5,7 @@ from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 from PIL import Image
+import xgboost as xgb
 
 img = Image.open('mshrmparts.jpeg')
 
@@ -84,14 +85,17 @@ for col in encode:
   
 df=df[:1] #selects only the first row
 
+# Convert DataFrame to DMatrix
+dmatrix = xgb.DMatrix(df)
+
 #st.subheader("User Input Features")
 #st.write(df)
 
 load_clf=pickle.load(open("mushrooms_clf.pkl","rb")) #reads saved classification model
 
 #apply model to predict
-prediction=load_clf.predict(df)
-prediction_proba=load_clf.predict_proba(df)
+prediction=load_clf.predict(dmatrix)
+prediction_proba=load_clf.predict_proba(dmatrix)
 
 ######for simpler execution######
 if prediction==0:
